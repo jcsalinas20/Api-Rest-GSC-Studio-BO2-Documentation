@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/turrets")
-public class TurretsRoutes {
+public class Turrets {
 
     @GetMapping()
     public PlainTextModel getAllTurrets() {

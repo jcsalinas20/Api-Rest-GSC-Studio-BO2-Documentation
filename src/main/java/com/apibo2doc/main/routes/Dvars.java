@@ -12,7 +12,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/dvars")
-public class DvarsRoutes {
+public class Dvars {
 
     @GetMapping()
     public JsonModel getAllDvars() {

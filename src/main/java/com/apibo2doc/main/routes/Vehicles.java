@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/vehicles")
-public class VehiclesRoutes {
+public class Vehicles {
 
     @GetMapping()
     public PlainTextModel getAllVehicles() {

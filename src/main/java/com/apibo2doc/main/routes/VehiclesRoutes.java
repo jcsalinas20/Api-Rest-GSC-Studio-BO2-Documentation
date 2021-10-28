@@ -1,6 +1,7 @@
 package com.apibo2doc.main.routes;
 
-import com.apibo2doc.main.controllers.VehiclesController;
+import com.apibo2doc.main.Variables;
+import com.apibo2doc.main.controllers.PlainTextController;
 import com.apibo2doc.main.models.PlainTextModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,27 +16,13 @@ public class VehiclesRoutes {
 
     @GetMapping()
     public PlainTextModel getAllVehicles() {
-        List<String> weaponList = VehiclesController.getAllVehicles();
-
-        PlainTextModel response = new PlainTextModel();
-        response.setStatus(weaponList.size() > 0);
-        response.setMessage("List of vehicles");
-        response.setCount(weaponList.size());
-        response.setList(weaponList);
-
-        return response;
+        List<String> vehiclesList = PlainTextController.getAll(Variables.URL_VEHICLES);
+        return PlainTextController.generateResponse("List of vehicles", vehiclesList);
     }
 
     @GetMapping("/query")
     public PlainTextModel getVehicle(@RequestParam("name") String name) {
-        List<String> weaponList = VehiclesController.getCustomList(name.toLowerCase());
-
-        PlainTextModel response = new PlainTextModel();
-        response.setStatus(weaponList.size() > 0);
-        response.setMessage("List of vehicles");
-        response.setCount(weaponList.size());
-        response.setList(weaponList);
-
-        return response;
+        List<String> vehiclesList = PlainTextController.getCustomList(Variables.URL_VEHICLES, name.toLowerCase());
+        return PlainTextController.generateResponse("List of vehicles", vehiclesList);
     }
 }

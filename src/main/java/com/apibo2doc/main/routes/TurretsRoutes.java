@@ -1,6 +1,7 @@
 package com.apibo2doc.main.routes;
 
-import com.apibo2doc.main.controllers.TurretsController;
+import com.apibo2doc.main.Variables;
+import com.apibo2doc.main.controllers.PlainTextController;
 import com.apibo2doc.main.models.PlainTextModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,27 +16,13 @@ public class TurretsRoutes {
 
     @GetMapping()
     public PlainTextModel getAllTurrets() {
-        List<String> weaponList = TurretsController.getAllTurrets();
-
-        PlainTextModel response = new PlainTextModel();
-        response.setStatus(weaponList.size() > 0);
-        response.setMessage("List of turrets");
-        response.setCount(weaponList.size());
-        response.setList(weaponList);
-
-        return response;
+        List<String> turretsList = PlainTextController.getAll(Variables.URL_TURRETS);
+        return PlainTextController.generateResponse("List of turrets", turretsList);
     }
 
     @GetMapping("/query")
     public PlainTextModel getTurret(@RequestParam("name") String name) {
-        List<String> weaponList = TurretsController.getCustomList(name.toLowerCase());
-
-        PlainTextModel response = new PlainTextModel();
-        response.setStatus(weaponList.size() > 0);
-        response.setMessage("List of turrets");
-        response.setCount(weaponList.size());
-        response.setList(weaponList);
-
-        return response;
+        List<String> turretsList = PlainTextController.getCustomList(Variables.URL_TURRETS, name.toLowerCase());
+        return PlainTextController.generateResponse("List of turrets", turretsList);
     }
 }

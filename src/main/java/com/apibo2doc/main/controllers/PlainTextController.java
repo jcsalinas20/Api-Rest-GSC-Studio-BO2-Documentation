@@ -1,5 +1,7 @@
 package com.apibo2doc.main.controllers;
 
+import com.apibo2doc.main.models.PlainTextModel;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -7,40 +9,49 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TurretsController {
+public class PlainTextController {
 
-    public static List<String> getAllTurrets() {
-        List<String> weaponList = new ArrayList<>();
+    public static List<String> getAll(String uri) {
+        List<String> dataList = new ArrayList<>();
         try {
-            URL url = new URL("https://raw.githubusercontent.com/jcsalinas20/GSC-Studio-BO2-Documentation/main/Turret.cpp");
+            URL url = new URL(uri);
             BufferedReader read = new BufferedReader(new InputStreamReader(url.openStream()));
             String name;
             while ((name = read.readLine()) != null) {
-                weaponList.add(name);
+                dataList.add(name);
             }
             read.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        return weaponList;
+        return dataList;
     }
 
-    public static List<String> getCustomList(String query) {
-        List<String> weaponList = new ArrayList<>();
+    public static List<String> getCustomList(String uri, String query) {
+        List<String> dataList = new ArrayList<>();
         try {
-            URL url = new URL("https://raw.githubusercontent.com/jcsalinas20/GSC-Studio-BO2-Documentation/main/Turret.cpp");
+            URL url = new URL(uri);
             BufferedReader read = new BufferedReader(new InputStreamReader(url.openStream()));
             String name;
             while ((name = read.readLine()) != null) {
                 if (name.contains(query)) {
-                    weaponList.add(name);
+                    dataList.add(name);
                 }
             }
             read.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return weaponList;
+        return dataList;
+    }
+
+    public static PlainTextModel generateResponse(String msg, List<String> list) {
+        PlainTextModel response = new PlainTextModel();
+        response.setStatus(list.size() > 0);
+        response.setMessage(msg);
+        response.setCount(list.size());
+        response.setList(list);
+        return response;
     }
 }

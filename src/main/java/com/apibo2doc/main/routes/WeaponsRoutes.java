@@ -18,7 +18,6 @@ public class WeaponsRoutes {
         List<String> weaponList = WeaponsController.getAllWeapons();
 
         WeaponsModel response = new WeaponsModel();
-
         response.setStatus(weaponList.size() > 0);
         response.setMessage("List of weapons");
         response.setCount(weaponList.size());
@@ -28,8 +27,15 @@ public class WeaponsRoutes {
     }
 
     @GetMapping("/query")
-    public String getWeapon(@RequestParam("name") String name) {
+    public WeaponsModel getWeapon(@RequestParam("name") String name) {
+        List<String> weaponList = WeaponsController.getCustomList(name.toLowerCase());
 
-        return name;
+        WeaponsModel response = new WeaponsModel();
+        response.setStatus(weaponList.size() > 0);
+        response.setMessage("List of weapons");
+        response.setCount(weaponList.size());
+        response.setList(weaponList);
+
+        return response;
     }
 }

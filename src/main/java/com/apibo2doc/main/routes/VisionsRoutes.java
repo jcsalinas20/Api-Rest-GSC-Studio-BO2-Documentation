@@ -1,7 +1,7 @@
 package com.apibo2doc.main.routes;
 
 import com.apibo2doc.main.controllers.VisionsController;
-import com.apibo2doc.main.models.VisionsModel;
+import com.apibo2doc.main.models.PlainTextModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,10 +14,10 @@ import java.util.List;
 public class VisionsRoutes {
 
     @GetMapping()
-    public VisionsModel getAllVisions() {
+    public PlainTextModel getAllVisions() {
         List<String> weaponList = VisionsController.getAllVisions();
 
-        VisionsModel response = new VisionsModel();
+        PlainTextModel response = new PlainTextModel();
         response.setStatus(weaponList.size() > 0);
         response.setMessage("List of visions");
         response.setCount(weaponList.size());
@@ -27,10 +27,10 @@ public class VisionsRoutes {
     }
 
     @GetMapping("/query")
-    public VisionsModel getVision(@RequestParam("name") String name) {
+    public PlainTextModel getVision(@RequestParam("name") String name) {
         List<String> weaponList = VisionsController.getCustomList(name.toLowerCase());
 
-        VisionsModel response = new VisionsModel();
+        PlainTextModel response = new PlainTextModel();
         response.setStatus(weaponList.size() > 0);
         response.setMessage("List of visions");
         response.setCount(weaponList.size());

@@ -8,6 +8,6 @@ public class Index {
 
     @RequestMapping("/")
     public String hello() {
-        return "Hola";
+        return "<a href='/weapons'>Weapons</a>";
     }
 }

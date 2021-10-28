@@ -29,7 +29,7 @@ public class VehiclesRoutes {
     }
 
     @GetMapping("/query")
-    public VehiclesModel getVehicles(@RequestParam("name") String name) {
+    public VehiclesModel getVehicle(@RequestParam("name") String name) {
         List<String> weaponList = VehiclesController.getCustomList(name.toLowerCase());
 
         VehiclesModel response = new VehiclesModel();

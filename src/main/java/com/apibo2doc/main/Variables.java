@@ -18,5 +18,12 @@ public class Variables {
     public static final String URL_SHADERS = "https://raw.githubusercontent.com/jcsalinas20/GSC-Studio-BO2-Documentation/main/Shader.cpp";
     public static final String URL_ADDRESSES = "https://raw.githubusercontent.com/jcsalinas20/GSC-Studio-BO2-Documentation/main/Addresses.c";
 
-    public static final String URL_ = "";
+    //SCRIPTS
+    public static final String URL_TOGGLE_SCRIPT = "https://raw.githubusercontent.com/jcsalinas20/GSC-Studio-BO2-Documentation/main/ToggleScript.cpp";
+    public static final String URL_VIEW_MODEL_CHANGER = "https://raw.githubusercontent.com/jcsalinas20/GSC-Studio-BO2-Documentation/main/ViewModel%20-%20Changer.cpp";
+    public static final String URL_TITLE_FX = "https://raw.githubusercontent.com/jcsalinas20/GSC-Studio-BO2-Documentation/main/TitelFx.cpp";
+    public static final String URL_SELF_MODEL_CHANGER = "https://raw.githubusercontent.com/jcsalinas20/GSC-Studio-BO2-Documentation/main/Self%20Model%20Changer.cpp";
+    public static final String URL_PRESTIGE_EDITOR = "https://raw.githubusercontent.com/jcsalinas20/GSC-Studio-BO2-Documentation/main/Prestige%20Editor.cpp";
+    public static final String URL_OVERFLOW_FIX = "https://raw.githubusercontent.com/jcsalinas20/GSC-Studio-BO2-Documentation/main/Overflowfix.cpp";
+    public static final String URL_LIGHTNING_BACKGROUND = "https://raw.githubusercontent.com/jcsalinas20/GSC-Studio-BO2-Documentation/main/LightningBackground.cpp";
 }

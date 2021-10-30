@@ -33,7 +33,6 @@ public class ScriptController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(textFile);
         return textFile;
     }
 

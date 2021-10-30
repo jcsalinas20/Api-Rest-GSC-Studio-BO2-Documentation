@@ -11,82 +11,222 @@
             background-color: #111;
             font-family: sans-serif;
         }
-        li {
-            font-size: 20px;
-            color: #d1d1d1;
+
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        a {
+
+        p a {
+            text-align: center;
+            color: #d1d1d1;
+            position: absolute;
+            user-select: none;
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: bold;
+            width: 300px;
+        }
+
+        p.top-left a {
+            top: 15px;
+            left: 0;
+        }
+
+        p.top-right a {
+            top: 15px;
+            right: 0;
+        }
+
+        table {
+            font-size: 20px;
+            border: 3px solid #FFFFFF;
+            width: 600px;
+            height: 215px;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        table td,
+        table th {
+            border-bottom: 1px solid #FFFFFF;
+            padding: 3px 2px;
+        }
+
+        table tbody td {
+            font-size: 18px;
+            color: #d1d1d1;
+            font-weight: bold;
+        }
+
+        table tbody td a {
+            text-decoration: none;
             color: #4b4bec;
         }
-        body>ul>ul {
-            margin-bottom: 20px;
+
+        table tr {
+            background: #1c1c1c;
+            height: 42px;
+        }
+
+        table tr:nth-child(even) {
+            background: #111;
+        }
+
+        table thead tr {
+            background: #0B6FA4;
+            border-bottom: 3px solid #FFFFFF;
+        }
+
+        table thead th {
+            font-size: 21px;
+            font-weight: bold;
+            color: #FFFFFF;
+            text-align: center;
+            border-left: 2px solid #FFFFFF;
+        }
+
+        table thead th:first-child {
+            border-left: none;
+        }
+
+        table tfoot {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333333;
+            background: #D0E4F5;
+            border-top: 3px solid #444444;
         }
     </style>
 </head>
 
 <body>
-    <ul>
-        <li>Addresses End Point</li>
-        <ul>
-            <li><a href='/addresses'>Get All</a></li>
-            <li><a href='/addresses/query?name=common'>Search By</a></li>
-        </ul>
-        <li>Bones End Point</li>
-        <ul>
-            <li><a href='/bones'>Get All</a></li>
-            <li><a href='/bones/query?name=head'>Search By</a></li>
-        </ul>
-        <li>Dvars End Point</li>
-        <ul>
-            <li><a href='/dvars'>Get All</a></li>
-            <li><a href='/dvars/query?name=player'>Search By</a></li>
-        </ul>
-        <li>Fonts End Point</li>
-        <ul>
-            <li><a href='/fonts'>Get All</a></li>
-            <li><a href='/fonts/query?name=extra'>Search By</a></li>
-        </ul>
-        <li>Fx End Point</li>
-        <ul>
-            <li><a href='/fx'>Get All</a></li>
-            <li><a href='/fx/query?name=flag'>Search By</a></li>
-        </ul>
-        <li>Models End Point</li>
-        <ul>
-            <li><a href='/models'>Get All</a></li>
-            <li><a href='/models/query?name=default'>Search By</a></li>
-        </ul>
-        <li>Native Functions End Point</li>
-        <ul>
-            <li><a href='/nativefunctions'>Get All</a></li>
-            <li><a href='/nativefunctions/query?name=player'>Search By</a></li>
-        </ul>
-        <li>Shaders End Point</li>
-        <ul>
-            <li><a href='/shaders'>Get All</a></li>
-            <li><a href='/shaders/query?name=acog'>Search By</a></li>
-        </ul>
-        <li>Turrets End Point</li>
-        <ul>
-            <li><a href='/turrets'>Get All</a></li>
-            <li><a href='/turrets/query?name=heli'>Search By</a></li>
-        </ul>
-        <li>Vehicles End Point</li>
-        <ul>
-            <li><a href='/vehicles'>Get All</a></li>
-            <li><a href='/vehicles/query?name=heli'>Search By</a></li>
-        </ul>
-        <li>Visions End Point</li>
-        <ul>
-            <li><a href='/visions'>Get All</a></li>
-            <li><a href='/visions/query?name=mp_'>Search By</a></li>
-        </ul>
-        <li>Weapons End Point</li>
-        <ul>
-            <li><a href='/weapons'>Get All</a></li>
-            <li><a href='/weapons/query?name=50'>Search By</a></li>
-        </ul>
-    </ul>
+    <p class="top-left"><a href="https://github.com/jcsalinas20/GSC-Studio-BO2-Documentation" target="_blank"
+            rel="noopener noreferrer">GitHub Repo Documentation</a></p>
+    <p class="top-right"><a href="https://github.com/jcsalinas20/REST-API-GSC-Studio-BO2-Documentation" target="_blank"
+            rel="noopener noreferrer">GitHub Repo API</a></p>
+    <table>
+        <thead>
+            <tr>
+                <th>End Points Names</th>
+                <th colspan="2">Search Values</th>
+                <th>Text Script</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Addresses</td>
+                <td><a href="/addresses">Get All</a></td>
+                <td><a href="/addresses/query?name=common">Search By</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Bones</td>
+                <td><a href="/bones">Get All</a></td>
+                <td><a href="/bones/query?name=head">Search By</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Dvars</td>
+                <td><a href="/dvars">Get All</a></td>
+                <td><a href="/dvars/query?name=player">Search By</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Fonts</td>
+                <td><a href="/fonts">Get All</a></td>
+                <td><a href="/fonts/query?name=extra">Search By</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Lightning Background</td>
+                <td></td>
+                <td></td>
+                <td><a href="/lightningbackground">Get Script</a></td>
+            </tr>
+            <tr>
+                <td>Models</td>
+                <td><a href="/models">Get All</a></td>
+                <td><a href="/models/query?name=default">Search By</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Native Functions</td>
+                <td><a href="/nativefunctions">Get All</a></td>
+                <td><a href="/nativefunctions/query?name=player">Search By</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Overflow Fix</td>
+                <td></td>
+                <td></td>
+                <td><a href="/overflowfix">Get Script</a></td>
+            </tr>
+            <tr>
+                <td>Prestige Editor</td>
+                <td></td>
+                <td></td>
+                <td><a href="/prestigeeditor">Get Script</a></td>
+            </tr>
+            <tr>
+                <td>Self Model Changer</td>
+                <td></td>
+                <td></td>
+                <td><a href="/selfmodelchanger">Get Script</a></td>
+            </tr>
+            <tr>
+                <td>Shaders</td>
+                <td><a href="/shaders">Get All</a></td>
+                <td><a href="/shaders/query?name=acog">Search By</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Title Fx</td>
+                <td></td>
+                <td></td>
+                <td><a href="/titlefx">Get Script</a></td>
+            </tr>
+            <tr>
+                <td>Toggle Script</td>
+                <td></td>
+                <td></td>
+                <td><a href="/togglescript">Get Script</a></td>
+            </tr>
+            <tr>
+                <td>Turrets</td>
+                <td><a href="/turrets">Get All</a></td>
+                <td><a href="/turrets/query?name=heli">Search By</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Vehicles</td>
+                <td><a href="/vehicles">Get All</a></td>
+                <td><a href="/vehicles/query?name=heli">Search By</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>View Model Changer</td>
+                <td></td>
+                <td></td>
+                <td><a href="/viewmodelchanger">Get Script</a></td>
+            </tr>
+            <tr>
+                <td>Visions</td>
+                <td><a href="/visions">Get All</a></td>
+                <td><a href="/visions/query?name=mp_">Search By</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Weapons</td>
+                <td><a href="/weapons">Get All</a></td>
+                <td><a href="/weapons/query?name=50">Search By</a></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 
 </html>

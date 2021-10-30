@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/viewmodelchanger")
-public class ViewModelChanger {
+@RequestMapping("/titlefx")
+public class TitleFx {
 
     @GetMapping()
-    public ScriptModel getViewModelChanger() {
-        String viewModelChangerText = ScriptController.getFileText(Variables.URL_VIEW_MODEL_CHANGER);
-        return ScriptController.generateResponse("View Model Changer", viewModelChangerText);
+    public ScriptModel getTitleFx() {
+        String titleFxText = ScriptController.getFileText(Variables.URL_TITLE_FX);
+        return ScriptController.generateResponse("Title Fx", titleFxText);
     }
 
 }

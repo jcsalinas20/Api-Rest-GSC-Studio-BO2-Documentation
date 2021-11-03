@@ -1,4 +1,4 @@
-# Rest Api Gsc Studio Bo2 Documentation
+# Api Rest Gsc Studio Bo2 Documentation
 
 This project is an Api Rest from [Gsc-Studio-Bo2-Documentation](https://github.com/jcsalinas20/GSC-Studio-BO2-Documentation) Repo of my account, I use the framework Spring Boot of the language Java to develop this Api and I use Heroku to upload the results.
 

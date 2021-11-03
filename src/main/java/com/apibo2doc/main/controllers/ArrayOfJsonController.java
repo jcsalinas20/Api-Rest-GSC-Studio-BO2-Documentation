@@ -22,7 +22,7 @@ public class ArrayOfJsonController {
             String[] values = new String[4];
             int index = 0;
             while ((line = read.readLine()) != null) {
-                if (line.isBlank()) {
+                if (line.isEmpty()) {
                     dataList.add(generateAddressModel(values[0], values[1], values[2], values[3]));
                     index = 0;
                 } else {
@@ -48,7 +48,7 @@ public class ArrayOfJsonController {
             int index = 0;
             boolean match = false;
             while ((line = read.readLine()) != null) {
-                if (line.isBlank()) {
+                if (line.isEmpty()) {
                     if (match) {
                         dataList.add(generateAddressModel(values[0], values[1], values[2], values[3]));
                     }

@@ -8,4 +8,4 @@ You can view the results in this [link](https://rest-api-gsc-studio-doc.herokuap
 
 In the index page of the Api you can view all the end points of the Api.
 
-![inedxPage](http://imgfz.com/i/c4qHA3x.png)
+![inedxPage](https://raw.githubusercontent.com/jcsalinas20/Api-Rest-GSC-Studio-BO2-Documentation/main/images/index.png)
